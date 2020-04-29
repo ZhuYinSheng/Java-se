@@ -175,7 +175,7 @@ class Y extends X
     }
 }
 ```
-编译错误，类X的构造器中给定int类型，X的继承Y中给定的无参，无法转换。
+编译错误，类X的构造器中给定int类型，X的继承Y中给定的无参，无法转换。        
 6. 
 ```
 public class A
@@ -190,7 +190,7 @@ public class A
     }
 }
 ```
-编译失败，super()必须在第一行。
+编译失败，super()必须在第一行。         
 7. 
 ```
 public class A
