@@ -334,7 +334,7 @@ class Y extends X
  
     int methodOfY()
     {
-        return m-- + --m;
+        return m-- + --m;// 从左往右算 1111+(1110-1)
     }
 }
  
@@ -353,7 +353,7 @@ public class MainClass
 ``` 
 class A
 {
-	void A()
+	void a()//void 有返回值，就是void             
 	{
 		System.out.println(1);
 	}
@@ -361,9 +361,9 @@ class A
 
 class B extends A
 {
-	void B()
+	void b()
 	{
-		A();
+		a();
 	}
 }
 
@@ -371,7 +371,7 @@ public class MainClass
 {
 	public static void main(String[] args)
 	{
-		new B().B();
+		new B().b();
 	}
 }
 ```
