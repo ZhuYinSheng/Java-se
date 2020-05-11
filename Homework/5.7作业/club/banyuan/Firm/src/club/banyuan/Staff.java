@@ -16,14 +16,14 @@ public class Staff {
         staffList[3] = new Hourly("赵六", "河西", "13555555555", "958-47-3625", 10.55);
         staffList[4] = new Volunteer("小强", "江宁", "15111111111");
         staffList[5] = new Volunteer("小明", "栖霞", "13999999999");
-        staffList[6] = new Commission("小文", "浦口", "13888888888", "952-279-5279", 6.75, 0.8);
-        staffList[7] = new Commission("小件", "秦淮", "13666666666", "110-110-1110", 9.25, 0.75);
+        staffList[6] = new Commission("小文", "浦口", "13888888888", "952-279-5279", 6.75, 0.2);
+        staffList[7] = new Commission("小件", "秦淮", "13666666666", "110-110-1110", 9.25, 0.15);
         ((Executive) staffList[0]).awardBonus(500.00);
         ((Hourly) staffList[3]).addHours(40);
         ((Commission)staffList[6]).addHours(35);
-        ((Commission)staffList[6]).addSales(400);
+        ((Commission)staffList[6]).addSales(400.00);
         ((Commission)staffList[7]).addHours(40);
-        ((Commission)staffList[7]).addSales(900);
+        ((Commission)staffList[7]).addSales(900.00);
     }
 
     // 支付所有员工工资。

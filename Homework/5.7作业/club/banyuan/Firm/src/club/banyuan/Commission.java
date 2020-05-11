@@ -1,28 +1,29 @@
 package club.banyuan;
 
 public class Commission extends Hourly{
-    private double sales;
+    private double totalSales;
     private double commissionRate;
 
-    public Commission(String eName, String eAddress, String ePhone, String socSecNumber, double rate, double cRate){
+    public Commission(String eName, String eAddress, String ePhone, String socSecNumber, double rate, double commissionRate){
         super(eName, eAddress, ePhone, socSecNumber, rate);
-        commissionRate = cRate;
-        sales = 0;
+        this.commissionRate = commissionRate;
     }
 
     public void addSales(double totalSales){
-        sales = totalSales;
+        this.totalSales += totalSales;
     }
 
+    @Override
     public String toString() {
         String result = super.toString();
-        result += "\n总销售额：" + sales;
+        result += "\n总销售额：" + totalSales;
         return result;
     }
 
+    @Override
     public double pay(){
-        double payment = super.pay() + commissionRate * sales;
-        sales = 0;
+        double payment = super.pay() + commissionRate * totalSales;
+        totalSales = 0;
         return payment;
     }
 }
