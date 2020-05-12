@@ -3,7 +3,7 @@ package club.banyuan;
 public class DataSetTester2 {
 
   public static void main(String[] args) {
-    Measurer m = new RectangleMeasurer();
+    Measurer m = (Measurer) new RectangleMeasurer();
     DataSet data = new DataSet(m);
     data.add(new Rectangle(15, 10));
     data.add(new Rectangle(40, 20));
