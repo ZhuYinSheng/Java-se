@@ -62,17 +62,17 @@ public interface List extends Iterable {
    */
   int size();
 
-  interface Node{
-    Object getData();
-
-    Object getNext();
-
-    Object getPrev();
-
-    void setData(Object data);
-
-    void setNext(Node next);
-
-    void setPrev(Node prev);
-  }
+//  interface Node{
+//    Object getData();
+//
+//    Object getNext();
+//
+//    Object getPrev();
+//
+//    void setData(Object data);
+//
+//    void setNext(Node next);
+//
+//    void setPrev(Node prev);
+//  }
 }

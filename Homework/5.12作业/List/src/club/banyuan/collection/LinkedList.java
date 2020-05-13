@@ -2,24 +2,27 @@ package club.banyuan.collection;
 
 import club.banyuan.util.Iterator;
 
+import java.util.Objects;
+
 public class LinkedList implements List{
 
-  private Node head = new Node() {
-    @Override
-    public void setData(Object data) {
-
-    }
-
-    @Override
-    public void setNext(List.Node next) {
-
-    }
-
-    @Override
-    public void setPrev(List.Node prev) {
-
-    }
-  };
+  private Node head = new Node();
+//  {
+//    @Override
+//    public void setData(Object data) {
+//
+//    }
+//
+//    @Override
+//    public void setNext(List.Node next) {
+//
+//    }
+//
+//    @Override
+//    public void setPrev(List.Node prev) {
+//
+//    }
+//  };
   private Node tail = head;
   private int size; //数组长度
 
@@ -110,22 +113,23 @@ public class LinkedList implements List{
 
   @Override
   public boolean add(Object o) {
-    Node node = new Node() {
-      @Override
-      public void setData(Object data) {
-
-      }
-
-      @Override
-      public void setNext(List.Node next) {
-
-      }
-
-      @Override
-      public void setPrev(List.Node prev) {
-
-      }
-    };
+    Node node = new Node();
+//    {
+//      @Override
+//      public void setData(Object data) {
+//
+//      }
+//
+//      @Override
+//      public void setNext(List.Node next) {
+//
+//      }
+//
+//      @Override
+//      public void setPrev(List.Node prev) {
+//
+//      }
+//    };
     node.setData(o);
     node.setPrev(tail);
     tail.setNext(node);
@@ -154,26 +158,50 @@ public class LinkedList implements List{
     return new Iterator(list);
   }
 
-  public static abstract class Node implements List.Node {
-    Object data;
-    Node next;
-    Node prev;
+  private static class Node {
+    private Object data;
+    private Node next;
+    private Node prev;
 
-    @Override
     public Object getData() {
       return data;
     }
 
-    @Override
+    public void setData(Object data) {
+      this.data = data;
+    }
+
     public Node getNext() {
       return next;
     }
 
-    @Override
+    public void setNext(Node next) {
+      this.next = next;
+    }
+
     public Node getPrev() {
       return prev;
     }
 
+    public void setPrev(Node prev) {
+      this.prev = prev;
+    }
 
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) return false;
+      Node node = (Node) o;
+      return Objects.equals(data, node.data) &&
+              Objects.equals(next, node.next) &&
+              Objects.equals(prev, node.prev);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(data, next, prev);
+    }
   }
+
+
 }

@@ -11,13 +11,21 @@ public class Main {
 
     show(new Bird() {
       //TODO
-      @Override
-      public String getName() {
-        return "燕子";
-      }
+//      @Override
+//      public String getName() {
+//        return "燕子";
+//      }
 
-      @Override
-      public void setName(String name) {
+//      {
+//        super.setName("燕子");
+//      }
+//
+////      @Override
+////      public void setName(String name) {
+//////        super.setName("燕子");
+////      }
+
+      {
         super.setName("燕子");
       }
 
@@ -26,7 +34,6 @@ public class Main {
         return 1000;
       }
     });
-
 
   }
 }
