@@ -5,34 +5,31 @@ public enum Weekday {
     TUESDAY("星期二"),
     WEDNESDAY("星期三"),
     THURSDAY("星期四"),
-    FRIDAY("星期五"){
-        public boolean isWeekday(){
-            return true;
-        }
-    },
-
+    FRIDAY("星期五"),
     SATURDAY("星期六"),
-    SUNDAY("星期日"){
-        public boolean isHoliday() {
-            return true;
-        }
-    };
+    SUNDAY("星期日");
 
     private final String weekdayName;
 
-    Weekday(String weekdayName){
+    Weekday(String weekdayName) {
         this.weekdayName = weekdayName;
     }
 
-    public boolean isWeekday() {
-        return true;
+    public boolean isWeekDay(boolean weekday){
+        if(this.equals(SATURDAY) || this.equals(SUNDAY))
+            weekday = false;
+        return weekday;
     }
 
-    public boolean isHoliday() {
-        return true;
+    public boolean isHoliday(boolean holiday){
+        if(this.equals(SATURDAY) || this.equals(SUNDAY))
+            holiday = true;
+        return holiday;
     }
 
-    public String getWeekdayName() {
-        return weekdayName;
+    @Override
+    public String toString() {
+        return this.weekdayName;
     }
+
 }
