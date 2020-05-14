@@ -2,17 +2,13 @@ package club.banyuan;
 
 public class Main {
 
-    public static void print(Weekday weekday){
-        if(weekday.isHoliday(false)){
-            System.out.println(weekday+"是假日");
-        }else if(weekday.isWeekDay(true)){
-            System.out.println(weekday+"不是假日");
-        }
-    }
-
     public static void main(String[] args) {
         for (Weekday weekday : Weekday.values()) {
-            print(weekday);
+            if(weekday.isHoliday(false)){
+                System.out.println(weekday+"是假日");
+            }else if(weekday.isWeekDay(true)){
+                System.out.println(weekday+"不是假日");
+            }
         }
 
         Weekday sat = Weekday.SATURDAY;
@@ -26,5 +22,4 @@ public class Main {
         System.out.println(Weekday.SATURDAY.compareTo(Weekday.SATURDAY));
         System.out.println(Weekday.SATURDAY.compareTo(Weekday.SUNDAY));
     }
-
 }
